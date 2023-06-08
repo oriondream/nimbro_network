@@ -19,10 +19,10 @@
 	<depend>yaml-cpp</depend>
 
 	<!-- This is not a hard dependency, the package compiles without plot_msgs. -->
-	<depend>plot_msgs</depend>
+	<!-- depend>plot_msgs</depend -->
 
 	<!-- This is not a hard dependency, the package compiles without config_server. -->
-	<depend>config_server</depend>
+	<!-- depend>config_server</depend -->
 
 	<!-- This is not a hard dependency, the package compiles without catch_ros -->
 	<depend>catch_ros</depend>

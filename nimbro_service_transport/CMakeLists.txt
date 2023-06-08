@@ -68,25 +68,27 @@ add_dependencies(udp_client
 )
 
 # GUI
-find_package(Qt4 REQUIRED)
-include(${QT_USE_FILE})
+if (GUI)
+  find_package(Qt4 REQUIRED)
+  include(${QT_USE_FILE})
 
-qt4_wrap_cpp(MOC_SRCS
+  qt4_wrap_cpp(MOC_SRCS
 	src/gui/service_widget.h
-)
+  )
 
-add_library(service_widget
+  add_library(service_widget
 	${MOC_SRCS}
 	src/gui/service_widget.cpp
-)
+  )
 
-add_dependencies(service_widget
+  add_dependencies(service_widget
 	${PROJECT_NAME}_generate_messages_cpp
-)
+  )
 
-target_link_libraries(service_widget
+  target_link_libraries(service_widget
 	${QT_LIBRARIES}
-)
+  )
+endif()
 
 # Tests
 if(catch_ros_FOUND)
